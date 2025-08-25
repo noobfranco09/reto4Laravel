@@ -17,7 +17,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::resource('empleados', EmpleadoController::class);
     Route::resource('productos', ProductoController::class);
-    Route::resource('ventas', VentaController::class)->only(['index', 'show','store','create']);
+    Route::resource('ventas', VentaController::class)->only(['index','show','store','create']);
 
     //rutas del malparido perfil que causa problemas 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

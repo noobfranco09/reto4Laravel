@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('description')->nullable();
             $table->decimal('total',15,2);
-            $table->foreignId('empleado_id')->constrained('empleados')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->boolean('state')->default(true);
             $table->timestamps();
         });

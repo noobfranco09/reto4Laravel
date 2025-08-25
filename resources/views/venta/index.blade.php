@@ -56,27 +56,14 @@
                                     <td class="px-4 py-2">{{ ++$i }}</td>
                                     <td class="px-4 py-2">{{ $venta->description }}</td>
                                     <td class="px-4 py-2">{{ $venta->total }}</td>
-                                    <td class="px-4 py-2">{{ $venta->empleado_id }}</td>
+                                    <td class="px-4 py-2">{{ $venta->user_id }}</td>
                                     <td class="px-4 py-2">{{ $venta->state }}</td>
                                     <td class="px-4 py-2 flex space-x-2">
                                         <a href="{{ route('ventas.show', $venta->id) }}"
                                             class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-1 px-2 rounded">
                                             {{ __('Show') }}
                                         </a>
-                                        <a href="{{ route('ventas.edit', $venta->id) }}"
-                                            class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-2 rounded">
-                                            {{ __('Edit') }}
-                                        </a>
-                                        <form action="{{ route('ventas.destroy', $venta->id) }}" method="POST"
-                                            class="inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-2 rounded"
-                                                onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">
-                                                {{ __('Delete') }}
-                                            </button>
-                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach
