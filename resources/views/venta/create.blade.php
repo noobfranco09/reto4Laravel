@@ -1,0 +1,34 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="text-lg font-semibold text-gray-700">
+            {{ __('Create') }} Venta
+        </h2>
+    </x-slot>
+
+    <div class="py-6">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <!-- Card Body -->
+                <div class="px-6 py-4 bg-white">
+                    <form method="POST" action="{{ route('ventas.store') }}" role="form" enctype="multipart/form-data">
+                        @csrf
+
+                        @include('venta.form')
+
+                        <!-- Botón Submit -->
+                        <div class="mt-4">
+                            <button type="submit"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                                {{ __('Guardar') }}
+                            </button>
+                            <a href="{{ route('ventas.index') }}"
+                                class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded">
+                                {{ __('Cancel') }}
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
